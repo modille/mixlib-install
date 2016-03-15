@@ -115,4 +115,44 @@ context "Mixlib::Install::Options" do
       end
     end
   end
+
+  shared_examples_for "mapping a product to a package" do
+    it "maps the product name to the package name" do
+      installer = nil
+      expect { installer = Mixlib::Install.new(base_options) }.to_not raise_error
+      info = installer.artifact_info
+      if info.empty?
+        raise "expected results"
+      elsif info.size > 1
+        expect(installer.artifact_info.first.url).to include(expected_package_name)
+      else
+        expect(installer.artifact_info.url).to include(expected_package_name)
+      end
+    end
+  end
+
+  context "for compliance product name" do
+    let(:product_name) { "compliance" }
+    let(:expected_package_name) { "chef-compliance" }
+    let(:product_version) { :latest }
+    let(:base_options) {
+      {
+        channel: channel,
+        product_name: product_name,
+        product_version: product_version,
+      }
+    }
+
+    context "for stable channel", focus: true do
+      let(:channel) { :stable }
+
+      it_behaves_like "mapping a product to a package"
+    end
+
+    context "for unstable channel", focus: true do
+      let(:channel) { :unstable }
+
+      it_behaves_like "mapping a product to a package"
+    end
+  end
 end

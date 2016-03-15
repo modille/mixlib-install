@@ -17,6 +17,7 @@
 #
 
 require "mixlib/versioning"
+require "mixlib/install/product"
 
 module Mixlib
   class Install
@@ -36,6 +37,7 @@ module Mixlib
         chef
         chefdk
         chef-server
+        compliance
         delivery-cli
         omnibus-toolchain
         push-jobs-client
@@ -58,6 +60,7 @@ module Mixlib
         }
 
         validate!
+        map_product_to_package_name
       end
 
       def validate!
@@ -114,6 +117,13 @@ module Mixlib
       end
 
       private
+
+      def map_product_to_package_name
+        options[:product_name] = PRODUCT_MATRIX.lookup(
+                                   options[:product_name],
+                                   options[:product_version]
+                                 ).package_name
+      end
 
       def validate_product_names
         unless SUPPORTED_PRODUCT_NAMES.include? product_name
