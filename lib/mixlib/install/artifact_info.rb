@@ -22,7 +22,6 @@ module Mixlib
       attr_reader :url
       attr_reader :md5
       attr_reader :sha256
-      attr_reader :sha1
       attr_reader :version
 
       attr_reader :platform
@@ -33,7 +32,6 @@ module Mixlib
         @url = data[:url]
         @md5 = data[:md5]
         @sha256 = data[:sha256]
-        @sha1 = data[:sha1]
         @version = data[:version]
         @platform = data[:platform]
         @platform_version = data[:platform_version]
@@ -67,7 +65,6 @@ module Mixlib
           url: url,
           md5: md5,
           sha256: sha256,
-          sha1: sha1,
           version: version,
           platform: platform,
           platform_version: platform_version,

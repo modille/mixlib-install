@@ -28,7 +28,7 @@ context "Mixlib::Install::Backend", :vcr do
   let(:architecture) { nil }
 
   let(:expected_info) { nil }
-  let(:expected_protocol) { "https://" }
+  let(:expected_protocol) { "http://" }
 
   let(:info) {
     Mixlib::Install.new(
@@ -45,13 +45,7 @@ context "Mixlib::Install::Backend", :vcr do
     if expected_info && !expected_info.key?(:url)
       expect(url).to match /#{expected_info[:url]}/
     else
-      if channel == :unstable
-        expect(url).to include("http://artifactory.chef.co")
-      elsif url.include?("freebsd/9") || url.include?("el/5") || url.include?("solaris2/5.10") || url.include?("solaris2/5.9")
-        expect(url).to include("http://chef.bintray.com")
-      else
-        expect(url).to include("https://packages.chef.io")
-      end
+      expect(url).to include("http://artifactory.chef.co")
     end
   end
 
@@ -146,10 +140,6 @@ context "Mixlib::Install::Backend", :vcr do
       let(:product_name) { "chef" }
       let(:channel) { channel }
       let(:product_version) { :latest }
-
-      if channel == :unstable
-        let(:expected_protocol) { "http://" }
-      end
 
       context "without platform info" do
         it_behaves_like "the right artifact list info"

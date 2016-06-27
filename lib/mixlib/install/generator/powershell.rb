@@ -46,11 +46,7 @@ module Mixlib
         def install_command
           install_project_module = []
           install_project_module << get_script("helpers.ps1")
-          install_project_module << if options.for_artifactory?
-                                      artifactory_urls
-                                    else
-                                      get_script("get_project_metadata.ps1")
-                                    end
+          install_project_module << artifactory_urls
           install_project_module << get_script("install_project.ps1")
 
           install_command = []
@@ -81,11 +77,7 @@ module Mixlib
         end
 
         def product_version
-          if options.for_artifactory?
-            artifacts.first.version
-          else
-            options.product_version
-          end
+          artifacts.first.version
         end
 
         def render_command

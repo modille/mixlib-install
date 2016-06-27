@@ -43,11 +43,13 @@ module Mixlib
         # @return [Array<ArtifactInfo>] list of artifacts for the configured
         # channel, product name, and product version.
         def available_artifacts
-          if options.latest_version?
-            artifactory_latest
-          else
-            artifactory_artifacts(options.product_version)
-          end
+          artifacts = if options.latest_version?
+                        artifactory_latest
+                      else
+                        artifactory_artifacts(options.product_version)
+                      end
+
+          windows_artifact_fixup!(artifacts)
         end
 
         #
@@ -116,6 +118,40 @@ items.find(
 
           # Convert results to build records
           results.map { |a| create_artifact(a) }
+        end
+
+        # On windows, if we do not have a native 64-bit package available
+        # in the discovered artifacts, we will make 32-bit artifacts available
+        # for 64-bit architecture.
+        def windows_artifact_fixup!(artifacts)
+          new_artifacts = [ ]
+          native_artifacts = [ ]
+
+          artifacts.each do |r|
+            next if r.platform != "windows"
+
+            # Store all native 64-bit artifacts and clone 32-bit artifacts to
+            # be used as 64-bit.
+            case r.architecture
+            when "i386"
+              new_artifacts << r.clone_with(architecture: "x86_64")
+            when "x86_64"
+              native_artifacts << r.clone
+            else
+              puts "Unknown architecture '#{r.architecture}' for windows."
+            end
+          end
+
+          # Now discard the cloned artifacts if we find an equivalent native
+          # artifact
+          native_artifacts.each do |r|
+            new_artifacts.delete_if do |x|
+              x.platform_version == r.platform_version
+            end
+          end
+
+          # add the remaining cloned artifacts to the original set
+          artifacts += new_artifacts
         end
 
         #

@@ -46,11 +46,7 @@ module Mixlib
           install_command << get_script("helpers.sh")
           install_command << render_variables
           install_command << get_script("platform_detection.sh")
-          if options.for_artifactory?
-            install_command << artifactory_urls
-          else
-            install_command << get_script("fetch_metadata.sh")
-          end
+          install_command << artifactory_urls
           install_command << get_script("fetch_package.sh")
           install_command << get_script("install_package.sh")
 
