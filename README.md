@@ -67,16 +67,10 @@ artifact.platform # => "ubuntu"
 artifact.platform_version # => "14.04"
 ```
 
-## Unstable channel
-The `:unstable` channel is currently only available when connected to Chef's internal network.
-
 ## Development
-Since mixlib-install needs to interact with Bintray and Artifactory and since Artifactory instances are only available in Chef's network, this project uses [vcr](https://github.com/vcr/vcr).
+[vcr](https://github.com/vcr/vcr).
 
 VCR is a tool that helps cache and replay http responses. When these responses change or when you add more tests you might need to update cached responses. Check out [spec_helper.rb](https://github.com/chef/mixlib-install/blob/master/spec/spec_helper.rb) for instructions on how to do this.
-
-### Force Artifactory as backend for all channels
-Set environment variable `MIXLIB_INSTALL_BACKEND=artifactory`
 
 ## Contributing
 

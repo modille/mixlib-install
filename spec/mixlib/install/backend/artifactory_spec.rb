@@ -107,14 +107,14 @@ context "Mixlib::Install::Backend::Artifactory", :vcr do
     let(:product_version) { "12.4.1" }
     let(:platform) { "solaris" }
     let(:platform_version) { "10" }
-    let(:architecture) { "sparc" }
+    let(:architecture) { "sun4v" }
 
     it "finds an artifact" do
       expect(artifact_info).to be_a Mixlib::Install::ArtifactInfo
       expect(artifact_info.version).to eq "12.4.1"
       expect(artifact_info.platform).to eq "solaris"
       expect(artifact_info.platform_version).to eq "10"
-      expect(artifact_info.architecture).to eq "sparc"
+      expect(artifact_info.architecture).to eq "sun4v"
     end
   end
 

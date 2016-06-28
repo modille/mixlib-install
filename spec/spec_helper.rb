@@ -36,7 +36,7 @@ VCR.configure do |config|
   # Options to be used during development:
   #
   # Enables vcr logger for debugging
-  config.debug_logger = File.open("vcr.log", "w")
+  # config.debug_logger = File.open("vcr.log", "w")
   #
   # Fails the specs if we get an http connection that we do not expect
   config.allow_http_connections_when_no_cassette = true

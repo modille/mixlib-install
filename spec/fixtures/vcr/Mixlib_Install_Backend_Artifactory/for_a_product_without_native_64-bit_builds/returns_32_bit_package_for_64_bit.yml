@@ -26,7 +26,7 @@ http_interactions:
       Server:
       - nginx/1.4.6 (Ubuntu)
       Date:
-      - Mon, 27 Jun 2016 23:06:31 GMT
+      - Tue, 28 Jun 2016 03:05:24 GMT
       Content-Type:
       - application/vnd.org.jfrog.build.BuildsByName+json
       Transfer-Encoding:
@@ -60,6 +60,9 @@ http_interactions:
           }, {
             "uri" : "/0.11.0",
             "started" : "2016-02-12T19:19:42.650+0000"
+          }, {
+            "uri" : "/0.16.12",
+            "started" : "2016-06-28T02:55:04.286+0000"
           }, {
             "uri" : "/0.16.5",
             "started" : "2016-06-24T18:26:35.090+0000"
@@ -124,7 +127,64 @@ http_interactions:
           "uri" : "http://artifactory.chef.co/api/build/chefdk"
         }
     http_version: 
-  recorded_at: Mon, 27 Jun 2016 23:05:40 GMT
+  recorded_at: Tue, 28 Jun 2016 03:04:33 GMT
+- request:
+    method: post
+    uri: http://mixlib-install:%25mKPtzbT1JH1wm333kjkkjs39oeuFLgZ8vNoOdLBPd%29TZAJsURs9w0HloWR%24l6h@artifactory.chef.co/api/search/aql
+    body:
+      encoding: UTF-8
+      string: |
+        items.find(
+          {"repo": "omnibus-stable-local"},
+          {"@omnibus.project": "chefdk"},
+          {"@omnibus.version": "0.16.12"},
+          {"name": {"$nmatch": "*.metadata.json" }}
+        ).include("repo", "path", "name", "property")
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Artifactory Ruby Gem 2.3.2
+      - Ruby
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - '30'
+      Content-Type:
+      - text/plain
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.4.6 (Ubuntu)
+      Date:
+      - Tue, 28 Jun 2016 03:05:25 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      X-Artifactory-Id:
+      - 74eddb6840a6545e:747da0c7:1552b7fe973:-7fd8
+    body:
+      encoding: UTF-8
+      string: |2
+
+        {
+        "results" : [  ],
+        "range" : {
+          "start_pos" : 0,
+          "end_pos" : 0,
+          "total" : 0
+        }
+        }
+    http_version: 
+  recorded_at: Tue, 28 Jun 2016 03:04:34 GMT
 - request:
     method: post
     uri: http://mixlib-install:%25mKPtzbT1JH1wm333kjkkjs39oeuFLgZ8vNoOdLBPd%29TZAJsURs9w0HloWR%24l6h@artifactory.chef.co/api/search/aql
@@ -159,7 +219,7 @@ http_interactions:
       Server:
       - nginx/1.4.6 (Ubuntu)
       Date:
-      - Mon, 27 Jun 2016 23:06:31 GMT
+      - Tue, 28 Jun 2016 03:05:25 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -181,7 +241,7 @@ http_interactions:
         }
         }
     http_version: 
-  recorded_at: Mon, 27 Jun 2016 23:05:40 GMT
+  recorded_at: Tue, 28 Jun 2016 03:04:34 GMT
 - request:
     method: post
     uri: http://mixlib-install:%25mKPtzbT1JH1wm333kjkkjs39oeuFLgZ8vNoOdLBPd%29TZAJsURs9w0HloWR%24l6h@artifactory.chef.co/api/search/aql
@@ -216,7 +276,7 @@ http_interactions:
       Server:
       - nginx/1.4.6 (Ubuntu)
       Date:
-      - Mon, 27 Jun 2016 23:06:32 GMT
+      - Tue, 28 Jun 2016 03:05:26 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -238,7 +298,7 @@ http_interactions:
         }
         }
     http_version: 
-  recorded_at: Mon, 27 Jun 2016 23:05:41 GMT
+  recorded_at: Tue, 28 Jun 2016 03:04:35 GMT
 - request:
     method: post
     uri: http://mixlib-install:%25mKPtzbT1JH1wm333kjkkjs39oeuFLgZ8vNoOdLBPd%29TZAJsURs9w0HloWR%24l6h@artifactory.chef.co/api/search/aql
@@ -273,7 +333,7 @@ http_interactions:
       Server:
       - nginx/1.4.6 (Ubuntu)
       Date:
-      - Mon, 27 Jun 2016 23:06:32 GMT
+      - Tue, 28 Jun 2016 03:05:26 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -295,7 +355,7 @@ http_interactions:
         }
         }
     http_version: 
-  recorded_at: Mon, 27 Jun 2016 23:05:41 GMT
+  recorded_at: Tue, 28 Jun 2016 03:04:35 GMT
 - request:
     method: post
     uri: http://mixlib-install:%25mKPtzbT1JH1wm333kjkkjs39oeuFLgZ8vNoOdLBPd%29TZAJsURs9w0HloWR%24l6h@artifactory.chef.co/api/search/aql
@@ -330,7 +390,7 @@ http_interactions:
       Server:
       - nginx/1.4.6 (Ubuntu)
       Date:
-      - Mon, 27 Jun 2016 23:06:32 GMT
+      - Tue, 28 Jun 2016 03:05:26 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -352,7 +412,7 @@ http_interactions:
         }
         }
     http_version: 
-  recorded_at: Mon, 27 Jun 2016 23:05:41 GMT
+  recorded_at: Tue, 28 Jun 2016 03:04:35 GMT
 - request:
     method: post
     uri: http://mixlib-install:%25mKPtzbT1JH1wm333kjkkjs39oeuFLgZ8vNoOdLBPd%29TZAJsURs9w0HloWR%24l6h@artifactory.chef.co/api/search/aql
@@ -387,7 +447,7 @@ http_interactions:
       Server:
       - nginx/1.4.6 (Ubuntu)
       Date:
-      - Mon, 27 Jun 2016 23:06:33 GMT
+      - Tue, 28 Jun 2016 03:05:27 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -409,7 +469,7 @@ http_interactions:
         }
         }
     http_version: 
-  recorded_at: Mon, 27 Jun 2016 23:05:42 GMT
+  recorded_at: Tue, 28 Jun 2016 03:04:36 GMT
 - request:
     method: post
     uri: http://mixlib-install:%25mKPtzbT1JH1wm333kjkkjs39oeuFLgZ8vNoOdLBPd%29TZAJsURs9w0HloWR%24l6h@artifactory.chef.co/api/search/aql
@@ -444,7 +504,7 @@ http_interactions:
       Server:
       - nginx/1.4.6 (Ubuntu)
       Date:
-      - Mon, 27 Jun 2016 23:06:33 GMT
+      - Tue, 28 Jun 2016 03:05:27 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -466,7 +526,7 @@ http_interactions:
         }
         }
     http_version: 
-  recorded_at: Mon, 27 Jun 2016 23:05:42 GMT
+  recorded_at: Tue, 28 Jun 2016 03:04:36 GMT
 - request:
     method: post
     uri: http://mixlib-install:%25mKPtzbT1JH1wm333kjkkjs39oeuFLgZ8vNoOdLBPd%29TZAJsURs9w0HloWR%24l6h@artifactory.chef.co/api/search/aql
@@ -501,7 +561,7 @@ http_interactions:
       Server:
       - nginx/1.4.6 (Ubuntu)
       Date:
-      - Mon, 27 Jun 2016 23:06:33 GMT
+      - Tue, 28 Jun 2016 03:05:27 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -523,7 +583,7 @@ http_interactions:
         }
         }
     http_version: 
-  recorded_at: Mon, 27 Jun 2016 23:05:43 GMT
+  recorded_at: Tue, 28 Jun 2016 03:04:36 GMT
 - request:
     method: post
     uri: http://mixlib-install:%25mKPtzbT1JH1wm333kjkkjs39oeuFLgZ8vNoOdLBPd%29TZAJsURs9w0HloWR%24l6h@artifactory.chef.co/api/search/aql
@@ -558,7 +618,7 @@ http_interactions:
       Server:
       - nginx/1.4.6 (Ubuntu)
       Date:
-      - Mon, 27 Jun 2016 23:06:34 GMT
+      - Tue, 28 Jun 2016 03:05:28 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -580,7 +640,7 @@ http_interactions:
         }
         }
     http_version: 
-  recorded_at: Mon, 27 Jun 2016 23:05:43 GMT
+  recorded_at: Tue, 28 Jun 2016 03:04:37 GMT
 - request:
     method: post
     uri: http://mixlib-install:%25mKPtzbT1JH1wm333kjkkjs39oeuFLgZ8vNoOdLBPd%29TZAJsURs9w0HloWR%24l6h@artifactory.chef.co/api/search/aql
@@ -615,7 +675,7 @@ http_interactions:
       Server:
       - nginx/1.4.6 (Ubuntu)
       Date:
-      - Mon, 27 Jun 2016 23:06:34 GMT
+      - Tue, 28 Jun 2016 03:05:28 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -637,7 +697,7 @@ http_interactions:
         }
         }
     http_version: 
-  recorded_at: Mon, 27 Jun 2016 23:05:43 GMT
+  recorded_at: Tue, 28 Jun 2016 03:04:37 GMT
 - request:
     method: post
     uri: http://mixlib-install:%25mKPtzbT1JH1wm333kjkkjs39oeuFLgZ8vNoOdLBPd%29TZAJsURs9w0HloWR%24l6h@artifactory.chef.co/api/search/aql
@@ -672,7 +732,7 @@ http_interactions:
       Server:
       - nginx/1.4.6 (Ubuntu)
       Date:
-      - Mon, 27 Jun 2016 23:06:35 GMT
+      - Tue, 28 Jun 2016 03:05:29 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -1318,5 +1378,5 @@ http_interactions:
         }
         }
     http_version: 
-  recorded_at: Mon, 27 Jun 2016 23:05:44 GMT
+  recorded_at: Tue, 28 Jun 2016 03:04:38 GMT
 recorded_with: VCR 3.0.3

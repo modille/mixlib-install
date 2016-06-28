@@ -26,7 +26,7 @@ http_interactions:
       Server:
       - nginx/1.4.6 (Ubuntu)
       Date:
-      - Mon, 27 Jun 2016 23:06:35 GMT
+      - Tue, 28 Jun 2016 03:05:29 GMT
       Content-Type:
       - application/vnd.org.jfrog.build.BuildsByName+json
       Transfer-Encoding:
@@ -103,7 +103,7 @@ http_interactions:
           "uri" : "http://artifactory.chef.co/api/build/chef"
         }
     http_version: 
-  recorded_at: Mon, 27 Jun 2016 23:05:44 GMT
+  recorded_at: Tue, 28 Jun 2016 03:04:38 GMT
 - request:
     method: post
     uri: http://mixlib-install:%25mKPtzbT1JH1wm333kjkkjs39oeuFLgZ8vNoOdLBPd%29TZAJsURs9w0HloWR%24l6h@artifactory.chef.co/api/search/aql
@@ -138,7 +138,7 @@ http_interactions:
       Server:
       - nginx/1.4.6 (Ubuntu)
       Date:
-      - Mon, 27 Jun 2016 23:06:35 GMT
+      - Tue, 28 Jun 2016 03:05:29 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -160,7 +160,7 @@ http_interactions:
         }
         }
     http_version: 
-  recorded_at: Mon, 27 Jun 2016 23:05:44 GMT
+  recorded_at: Tue, 28 Jun 2016 03:04:38 GMT
 - request:
     method: post
     uri: http://mixlib-install:%25mKPtzbT1JH1wm333kjkkjs39oeuFLgZ8vNoOdLBPd%29TZAJsURs9w0HloWR%24l6h@artifactory.chef.co/api/search/aql
@@ -195,7 +195,7 @@ http_interactions:
       Server:
       - nginx/1.4.6 (Ubuntu)
       Date:
-      - Mon, 27 Jun 2016 23:06:36 GMT
+      - Tue, 28 Jun 2016 03:05:30 GMT
       Content-Type:
       - application/json
       Transfer-Encoding:
@@ -2089,5 +2089,5 @@ http_interactions:
         }
         }
     http_version: 
-  recorded_at: Mon, 27 Jun 2016 23:05:45 GMT
+  recorded_at: Tue, 28 Jun 2016 03:04:39 GMT
 recorded_with: VCR 3.0.3
