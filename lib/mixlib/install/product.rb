@@ -266,9 +266,10 @@ PRODUCT_MATRIX = Mixlib::Install::ProductMatrix.new do
 
   product "push-jobs-client" do
     product_name "Chef Push Server"
-    package_name do |v|
-      v < version_for("1.3.0") ? "opscode-push-jobs-client" : "push-jobs-client"
-    end
+    package_name "push-jobs-client"
+    # package_name do |v|
+    #   v < version_for("1.3.0") ? "opscode-push-jobs-client" : "push-jobs-client"
+    # end
   end
 
   product "push-jobs-server" do
